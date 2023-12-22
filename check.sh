@@ -17,7 +17,7 @@ function run_test
     echo $ok
 }
 
-git clone git@github.com:P-p-H-d/mlib.git
+git clone https://github.com/P-p-H-d/mlib.git
 cp ./m-atomic.h mlib/
 
 run_test gcc
