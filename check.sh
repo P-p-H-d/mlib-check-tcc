@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAX=10
+MAX=50
 ok=0
 
 function run_test
