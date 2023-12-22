@@ -1,0 +1,19 @@
+name: C/C++ CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest, ubuntu-20.04]
+    runs-on: ${{ matrix.platform }}
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: CPU Information
+      run:  lscpu || sysctl -a|grep cpu || echo "CPU information not available"
+    - name: Install
+      run: sudo apt-get install clang tcc
+    - name: Tests
+      run: ./check.sh
